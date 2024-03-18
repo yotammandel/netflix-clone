@@ -1,8 +1,6 @@
 
 import { useEffect, useState } from "react";
 import {
-  Switch,
-  Route,
   Link
 } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -43,11 +41,9 @@ export default function Nav() {
        
         <img alt="" src="../netflix-logo.png" style={{ paddingLeft: "20px" }} />
         <div style={{width:'30%'}}>
-        <ul style={{display:'flex',listStyle:"none",justifyContent:'flex-end',justifyContent:'space-between'}}>
-          <Link to="/" style={{ textDecoration:'none',color:'white'}}>Home</Link>
-          <Link to="/actors"style={{ textDecoration:'none',color:'white'}}>Actors</Link>
-          <Link to="category"style={{ textDecoration:'none',color:'white'}}>Category</Link>
-        </ul>
+        {/* <ul style={{display:'flex',listStyle:"none",justifyContent:'flex-end',justifyContent:'space-between'}}>
+          <Link to="/" style={{ textDecoration:'none',color:'white'}}>Home</Link>          
+        </ul> */}
         </div>
         <img
           alt=""
