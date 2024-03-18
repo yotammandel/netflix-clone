@@ -1,0 +1,38 @@
+.btn{
+    background-color: rgba(17,17,17,.8);
+    color: white;
+    margin: 5px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    font-size: large;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.btn:hover{
+    color: rgb(17,17,17);
+    background-color:whitesmoke;
+}
+.ItemTitle{
+    color: whitesmoke;
+    font-size: xx-large;
+    font-weight: 900;
+    margin: 5px;
+    margin-left: 20px;
+}
+.p{
+    width: .5vw;
+}
+.overview{
+    margin: 5px;
+    width: 550px;
+    font-size: x-large;
+    font-weight: 900;
+    margin-left: 20px;
+}
+.blurDiv{
+    height: 50px;
+    background-color: rgba(17,17,17,.8);
+    opacity: .5;
+}

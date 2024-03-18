@@ -1,0 +1,43 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card{
+    width: 18rem;
+    height: 500px;
+    position: absolute;
+    top: 100px;
+    background-color: rgba(17,17,17,0.8);
+    color: white;
+  }
+  .card-body{
+    background-color: rgba(17,17,17,0.8);
+  }
+  .btnC{
+    background-color: rgba(148, 26, 37,.8);
+    color: white;
+    margin: 5px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    font-size: large;
+    font-weight: bold;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+.btnC:hover{
+    color: rgb(17,17,17,.8);
+    background-color:whitesmoke;
+}
+.card-text{
+  overflow: scroll;
+}

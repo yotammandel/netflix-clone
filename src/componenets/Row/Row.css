@@ -1,0 +1,41 @@
+.Row{
+    display: flex;
+    justify-content: left;
+    height: 300px;
+    overflow: scroll;
+    /* overflow-y: hidden; */
+    width: 100vw;
+}
+.title{
+    color: white;
+}
+.RowImg{
+    padding: 5px;
+}
+
+::-webkit-scrollbar{
+    width: 1em;
+    height: 0em;
+}
+::-webkit-scrollbar-track{
+    background-color: black;
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgba(241, 55, 55,.5);
+    border: .25em solid rgba(181, 26, 26.5);
+    border-radius: 100vw;
+    width: 50px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(160, 20, 20);
+    border: .25em solid rgb(181, 26, 26);
+   
+}
+.RowImg{
+    padding: 10px;
+}
+.RowImg:hover{
+    padding: 0;
+}
