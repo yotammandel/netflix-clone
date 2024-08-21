@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import './Row.css';
+import "./Row.css";
 import Popup from "../Popup/Popup";
 
 export default function Row(props) {
@@ -9,9 +9,7 @@ export default function Row(props) {
 
   const getData = async function () {
     try {
-      const response = await axios.get(
-        `${props.url}33e3644d083134cd8067dff145dfaad6`
-      );
+      const response = await axios.get(`${props.url}${process.env.API_KEY}`);
       setData(response.data.results);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -34,7 +32,7 @@ export default function Row(props) {
     <>
       <div className="container" class="fixed-left">
         <h1 className="title">{props.title}</h1>
-        <div className="Row" style={{height:props.height}}>
+        <div className="Row" style={{ height: props.height }}>
           {data.map((item, i) => (
             <img
               className="RowImg"
@@ -49,9 +47,9 @@ export default function Row(props) {
 
       {selectedMovie && (
         <Popup
-        trigger={true}
-        closePopup={closePopup}
-        movieData={selectedMovie}
+          trigger={true}
+          closePopup={closePopup}
+          movieData={selectedMovie}
         />
       )}
     </>

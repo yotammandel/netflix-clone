@@ -8,7 +8,7 @@ export default function Carusel() {
 
   let getData = async function () {
     let require = await axios.get(
-      "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=2&api_key=33e3644d083134cd8067dff145dfaad6"
+      `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=2&api_key=${process.env.API_KEY}`
     );
     console.log(require.data.results);
     setData(require.data.results);
