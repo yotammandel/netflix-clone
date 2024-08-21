@@ -3,22 +3,23 @@ import axios from "axios";
 import "./Row.css";
 import Popup from "../Popup/Popup";
 
-export default function Row(props) {
+export default function Row({ url, title, height }) {
   const [data, setData] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
-
-  const getData = async function () {
-    try {
-      const response = await axios.get(`${props.url}${process.env.API_KEY}`);
-      setData(response.data.results);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+  const apiKey = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(`${url}${apiKey}`);
+        setData(response.data.results);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
     getData();
-  }, []);
+  }, [url, apiKey]);
 
   const openPopup = (movie) => {
     setSelectedMovie(movie);
@@ -29,20 +30,18 @@ export default function Row(props) {
   };
 
   return (
-    <>
-      <div className="container" class="fixed-left">
-        <h1 className="title">{props.title}</h1>
-        <div className="Row" style={{ height: props.height }}>
-          {data.map((item, i) => (
-            <img
-              className="RowImg"
-              key={i}
-              alt=""
-              src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-              onClick={() => openPopup(item)}
-            />
-          ))}
-        </div>
+    <div >
+      <h1 className="title">{title}</h1>
+      <div className="Row" style={{ height }}>
+        {data.map((item) => (
+          <img
+            className="RowImg"
+            key={item.id}
+            alt={item.title || "Movie Poster"}
+            src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+            onClick={() => openPopup(item)}
+          />
+        ))}
       </div>
 
       {selectedMovie && (
@@ -52,6 +51,6 @@ export default function Row(props) {
           movieData={selectedMovie}
         />
       )}
-    </>
+    </div>
   );
 }
